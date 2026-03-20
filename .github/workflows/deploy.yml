@@ -26,7 +26,8 @@ jobs:
 
       - name: Inject API Key
         run: |
-          sed -i "s|__GROK_API_KEY__|${{ secrets.GROK_API_KEY }}|g" index.html
+          sed -i "s|__GROK_API_KEY__|${{ secrets.GROK_API_KEY }}|g" js/app.js
+
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
