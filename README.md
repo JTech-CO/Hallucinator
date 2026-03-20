@@ -2,7 +2,7 @@
 
 > 2022년 11월, 그 황금기의 ChatGPT를 다시 만나보세요.
 
-초기 ChatGPT(GPT-3.5)의 자신만만하고 장황한 답변 스타일을 Grok API로 재현하는 레트로 AI 챗봇입니다.
+초기 ChatGPT(GPT-3.5)의 자신만만하고 장황한 답변 스타일을 Grok API로 재현하는 레트로 AI 챗봇입니다. [실행하기](<https://jtech-co.github.io/Hallucinator/>)
 
 ## 주요 기능
 
