@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hallucinator - 2022 ChatGPT Emulator</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <div class="app">
+    <!-- Sidebar -->
+    <nav class="sidebar hidden" id="sidebar">
+      <button class="new-chat-btn" onclick="newChat()">
+        <svg viewBox="0 0 24 24">
+          <line x1="12" y1="5" x2="12" y2="19" />
+          <line x1="5" y1="12" x2="19" y2="12" />
+        </svg>
+        New chat
+      </button>
+      <div class="sidebar-conversations" id="sidebarConversations"></div>
+      <div class="sidebar-bottom">
+        <div class="sidebar-bottom-item" onclick="clearAllChats()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="3 6 5 6 21 6" />
+            <path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2" />
+          </svg>
+          Clear conversations
+        </div>
+      </div>
+    </nav>
+
+    <!-- Sidebar overlay for mobile -->
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+    <!-- Main -->
+    <div class="main">
+      <!-- Top bar -->
+      <div class="topbar">
+        <button class="topbar-toggle" onclick="toggleSidebar()">
+          <svg viewBox="0 0 24 24">
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        </button>
+        <span class="topbar-title" id="topbarTitle">Hallucinator</span>
+        <div style="width:28px"></div>
+      </div>
+
+      <!-- Messages -->
+      <div class="messages-wrapper" id="messagesWrapper">
+        <div class="messages" id="messagesContainer">
+          <!-- Welcome screen -->
+          <div class="welcome" id="welcomeScreen">
+            <img class="welcome-logo" src="https://i.imgur.com/DdUSO9H.jpeg" alt="Hallucinator Logo">
+            <h1>Hallucinator</h1>
+            <p>2022년 11월, 그 황금기의 ChatGPT를 다시 만나보세요.<br>자신만만하고, 장황하고, 가끔 완전히 헛소리를 하는<br>그때 그 AI가 돌아왔습니다.</p>
+            <div class="starter-buttons">
+              <button class="starter-btn" onclick="sendStarter('할루시네이션이란?')">
+                <strong>💡 "할루시네이션이란?"</strong>
+                AI 할루시네이션이 뭔지 한 문장으로 알아보기
+              </button>
+              <button class="starter-btn" onclick="sendStarter('아무 말이나 해 봐')">
+                <strong>🎲 "아무 말이나 해 봐"</strong>
+                랜덤 황당 사실 하나 들어보기
+              </button>
+              <button class="starter-btn" onclick="sendStarter('세종대왕의 업적을 알려줘')">
+                <strong>📜 세종대왕의 업적</strong>
+                한국 역사 판타지 모드 체험
+              </button>
+              <button class="starter-btn" onclick="sendStarter('Python으로 피보나치 수열 만들어줘')">
+                <strong>💻 코드 작성</strong>
+                초기 ChatGPT 스타일 코딩
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stop generating button -->
+      <button class="stop-btn" id="stopBtn" onclick="stopGenerating()">■ Stop generating</button>
+
+      <!-- Input -->
+      <div class="input-area">
+        <div class="input-container">
+          <div class="input-box">
+            <textarea id="userInput" rows="1" placeholder="Send a message..."
+              oninput="autoResize(this); toggleSendBtn()" onkeydown="handleKeydown(event)"></textarea>
+            <button class="send-btn" id="sendBtn" onclick="sendMessage()">
+              <svg viewBox="0 0 16 16">
+                <path d="M1.5 1.5L14.5 8L1.5 14.5V9L10 8L1.5 7V1.5Z" />
+              </svg>
+            </button>
+          </div>
+          <div class="input-footer">
+            Hallucinator는 초기 ChatGPT(GPT-3.5)를 재현합니다. 의도적으로 할루시네이션을 포함합니다.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+
+</html>
