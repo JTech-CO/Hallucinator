@@ -2,6 +2,8 @@
 
 > **편향된 학습 데이터로 인해 자연스럽게 실수하는 초창기 ChatGPT 재현 챗봇**
 
+[실행하기](https://hallucinator-real.netlify.app/)
+
 ## 1. 소개 (Introduction)
 
 초기 ChatGPT(GPT-3.5)의 자신만만하고 장황한 답변 스타일을 Grok API로 재현하는 레트로 AI 챗봇입니다.
