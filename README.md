@@ -2,7 +2,7 @@
 
 > **편향된 학습 데이터로 인해 자연스럽게 실수하는 초창기 ChatGPT 재현 챗봇**
 
-[실행하기](https://hallucinatorreal.jtech-co.workers.dev/)
+[실행하기](https://hallucinatorreal.pages.dev/)
 
 ## 1. 소개 (Introduction)
 
