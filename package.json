@@ -1,0 +1,7 @@
+{
+  "name": "hallucinator-real",
+  "private": true,
+  "scripts": {
+    "build": "sed -i \"s|__GROK_API_KEY__|$GROK_API_KEY|g\" js/app.js"
+  }
+}
