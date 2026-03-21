@@ -1,0 +1,3 @@
+[build]
+  publish = "."
+  command = "sed -i \"s|__GROK_API_KEY__|$GROK_API_KEY|g\" js/app.js"
