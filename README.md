@@ -47,6 +47,7 @@
 ```text
 hallucinator-real/
 ├── index.html         # 메인 페이지
+├── netlify.toml       # Netlify 빌드 설정 (API 키 주입)
 ├── css/
 │   └── style.css      # 2022 ChatGPT 다크 모드 UI
 ├── js/
