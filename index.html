@@ -46,7 +46,28 @@
             <line x1="3" y1="18" x2="21" y2="18" />
           </svg>
         </button>
-        <span class="topbar-title" id="topbarTitle">Hallucinator-Real</span>
+        <span class="topbar-title" id="topbarTitle">
+          <button class="topbar-title-btn" id="versionBtn" onclick="toggleVersionDropdown()">
+            Hallucinator-Real
+            <svg viewBox="0 0 12 12"><path d="M2 4L6 8L10 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="version-dropdown" id="versionDropdown">
+            <div class="version-item" onclick="switchVersion('troll')">
+              <div class="version-item-info">
+                <span class="version-item-name">Troll</span>
+                <span class="version-item-desc">의도적 할루시네이션</span>
+              </div>
+              <svg class="version-item-check" id="checkTroll" viewBox="0 0 24 24" style="visibility:hidden"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div class="version-item" onclick="switchVersion('real')">
+              <div class="version-item-info">
+                <span class="version-item-name">Real</span>
+                <span class="version-item-desc">초창기 ChatGPT 재현</span>
+              </div>
+              <svg class="version-item-check" id="checkReal" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+          </div>
+        </span>
         <div style="width:28px"></div>
       </div>
 
