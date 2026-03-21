@@ -1,4 +1,4 @@
-name: Deploy Hallucinator-Real to GitHub Pages
+name: Deploy Hallucinator to GitHub Pages
 
 on:
   push:
