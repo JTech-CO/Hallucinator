@@ -301,20 +301,54 @@ function formatMessage(text) {
 
   html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
   html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
-  html = html.replace(/^(\d+\.\s.+)$/gm, (match) => `<li>${match.replace(/^\d+\.\s/, '')}</li>`);
-  html = html.replace(/((?:<li>.*<\/li>\n?)+)/g, '<ol>$1</ol>');
 
-  html = html.split('\n\n').map(p => {
-    p = p.trim();
-    if (!p) return '';
-    if (p.startsWith('<pre>') || p.startsWith('<ol>')) return p;
-    return `<p>${p}</p>`;
+  // 빈 줄로 분리된 번호 항목 블록을 하나로 병합 후 처리
+  const blocks = html.split('\n\n');
+  const merged = [];
+  let listBuf = [];
+
+  for (const block of blocks) {
+    if (/^\d+\.\s/.test(block.trim())) {
+      listBuf.push(block.trim());
+    } else {
+      if (listBuf.length > 0) {
+        merged.push('__LIST__' + listBuf.join('\n'));
+        listBuf = [];
+      }
+      merged.push(block);
+    }
+  }
+  if (listBuf.length > 0) merged.push('__LIST__' + listBuf.join('\n'));
+
+  html = merged.map(block => {
+    block = block.trim();
+    if (!block) return '';
+    if (block.startsWith('<pre>')) return block;
+
+    if (block.startsWith('__LIST__')) {
+      const lines = block.slice(8).split('\n');
+      const items = [];
+      let cur = '';
+      for (const line of lines) {
+        if (/^\d+\.\s/.test(line)) {
+          if (cur) items.push(cur);
+          cur = line.replace(/^\d+\.\s/, '');
+        } else {
+          cur += ' ' + line;
+        }
+      }
+      if (cur) items.push(cur);
+      return `<ol>${items.map(i => `<li>${i.trim()}</li>`).join('')}</ol>`;
+    }
+
+    return `<p>${block}</p>`;
   }).join('');
 
   html = html.replace(/([^>])\n([^<])/g, '$1<br>$2');
 
   return html;
 }
+
 
 function escapeHtml(str) {
   const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
