@@ -195,7 +195,7 @@ async function generateResponse() {
             updateLastMessage(fullContent);
             scrollToBottom();
           }
-        } catch (e) {}
+        } catch (e) { }
       }
     }
 
@@ -284,8 +284,8 @@ function createMessageRow(msg) {
 
   const contentHTML = msg.content
     ? (msg.content.startsWith('<div class="error-msg">')
-        ? msg.content
-        : formatMessage(msg.content))
+      ? msg.content
+      : formatMessage(msg.content))
     : '<div class="typing-indicator"><span></span><span></span><span></span></div>';
 
   row.innerHTML = `
