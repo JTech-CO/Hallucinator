@@ -417,3 +417,34 @@ function handleKeydown(e) {
     sendMessage();
   }
 }
+
+/* ===== Version Selector ===== */
+const VERSION_URLS = {
+  troll: 'https://hallucinator-troll.netlify.app/',
+  real: 'https://hallucinator-real.netlify.app/'
+};
+
+function toggleVersionDropdown() {
+  const dropdown = document.getElementById('versionDropdown');
+  const btn = document.getElementById('versionBtn');
+  dropdown.classList.toggle('show');
+  btn.classList.toggle('open');
+}
+
+function switchVersion(version) {
+  const url = VERSION_URLS[version];
+  if (url && version !== 'real') {
+    window.location.href = url;
+  }
+  toggleVersionDropdown();
+}
+
+// 드롭다운 외부 클릭 시 닫기
+document.addEventListener('click', (e) => {
+  const dropdown = document.getElementById('versionDropdown');
+  const btn = document.getElementById('versionBtn');
+  if (dropdown && !dropdown.contains(e.target) && !btn.contains(e.target)) {
+    dropdown.classList.remove('show');
+    btn.classList.remove('open');
+  }
+});
