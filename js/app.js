@@ -420,8 +420,8 @@ function handleKeydown(e) {
 
 /* ===== Version Selector ===== */
 const VERSION_URLS = {
-  troll: 'https://hallucinatortroll.mjwbryan131.workers.dev/',
-  real: 'https://hallucinatorreal.mjwbryan131.workers.dev/'
+  troll: 'https://hallucinatortroll.jtech-co.workers.dev/',
+  real: 'https://hallucinatorreal.jtech-co.workers.dev/'
 };
 
 function toggleVersionDropdown() {
