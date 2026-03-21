@@ -27,14 +27,17 @@
 
 1. **GitHub Secret 등록**
    - Repository → **Settings** → **Secrets and variables** → **Actions**
-   - **New repository secret** → Name: `GROK_API_KEY`, Value: xAI API 키 (https://console.x.ai 에서 발급)
+   - **New repository secret**으로 다음 3가지를 등록합니다:
+     - `GROK_API_KEY`: xAI API 키 (https://console.x.ai 에서 발급)
+     - `CLOUDFLARE_API_TOKEN`: Cloudflare 토큰 (Edit Cloudflare Workers 권한)
+     - `CLOUDFLARE_ACCOUNT_ID`: Cloudflare 계정 ID
 
-2. **GitHub Pages 활성화**
-   - Repository → **Settings** → **Pages** → Source: **GitHub Actions** 선택
+2. **Cloudflare 사전 설정**
+   - 기존 Cloudflare Pages 자동 연동(GitHub 직접 연결)이 설정되어 있다면 해제합니다.
 
 3. **배포**
-   - `main` 브랜치에 push하면 자동으로 빌드 & 배포됩니다.
-   - `js/app.js`의 `__GROK_API_KEY__` 플레이스홀더가 실제 키로 치환됩니다.
+   - GitHub `main` 브랜치에 코드를 push하면 GitHub Actions 워크플로우(`deploy.yml`)가 자동으로 실행됩니다.
+   - `__GROK_API_KEY__` 치환 후 Wrangler를 통해 Cloudflare Pages에 업로드됩니다.
 
 4. **로컬 테스트**
    ```bash
@@ -55,7 +58,7 @@ hallucinator-real/
 ├── image/             # 이미지 리소스
 └── .github/
     └── workflows/
-        └── deploy.yml # GitHub Pages 자동 배포
+        └── deploy.yml # Cloudflare Pages 자동 배포 (GitHub Actions 주도)
 ```
 
 ## 5. 정보 (Info)
