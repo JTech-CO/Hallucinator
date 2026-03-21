@@ -420,8 +420,8 @@ function handleKeydown(e) {
 
 /* ===== Version Selector ===== */
 const VERSION_URLS = {
-  troll: 'https://hallucinatortroll.pages.dev/',
-  real: 'https://hallucinatorreal.pages.dev/'
+  troll: 'https://hallucinator-troll.pages.dev/',
+  real: 'https://hallucinator-real.pages.dev/'
 };
 
 function toggleVersionDropdown() {
