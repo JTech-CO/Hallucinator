@@ -144,7 +144,6 @@ async function generateResponse() {
         model: MODEL,
         messages: apiMessages,
         stream: true,
-        temperature: 1.0,
         max_tokens: 2048
       }),
       signal: abortController.signal
