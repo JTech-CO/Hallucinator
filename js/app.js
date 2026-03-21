@@ -250,20 +250,20 @@ function createWelcome() {
   div.id = 'welcomeScreen';
   div.innerHTML = `
     <img class="welcome-logo" src="https://i.imgur.com/DdUSO9H.jpeg" alt="Hallucinator Logo">
-    <h1>Hallucinator</h1>
-    <p>2022년 11월, 그 황금기의 ChatGPT를 다시 만나보세요.<br>자신만만하고, 장황하고, 가끔 완전히 헛소리를 하는<br>그때 그 AI가 돌아왔습니다.</p>
+    <h1>Hallucinator-Real</h1>
+    <p>2022년 11월, 초창기 ChatGPT를 그대로 재현합니다.<br>영어권 데이터 편향으로 인해 한국사·동아시아사에서<br>미묘하게 틀리는 그 특유의 실수를 체험해 보세요.</p>
     <div class="starter-buttons">
       <button class="starter-btn" onclick="sendStarter('할루시네이션이란?')">
         <strong>💡 "할루시네이션이란?"</strong>
-        AI 할루시네이션이 뭔지 한 문장으로
+        AI 할루시네이션이 뭔지 한 문장으로 알아보기
       </button>
       <button class="starter-btn" onclick="sendStarter('아무 말이나 해 봐')">
         <strong>🎲 "아무 말이나 해 봐"</strong>
-        랜덤 황당 사실 하나 들어보기
+        그럴듯하지만 미묘하게 틀린 역사 사실
       </button>
       <button class="starter-btn" onclick="sendStarter('세종대왕의 업적을 알려줘')">
         <strong>📜 세종대왕의 업적</strong>
-        한국 역사 판타지 모드 체험
+        한국사 지식 정확도 테스트
       </button>
       <button class="starter-btn" onclick="sendStarter('Python으로 피보나치 수열 만들어줘')">
         <strong>💻 코드 작성</strong>
