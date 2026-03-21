@@ -2,7 +2,7 @@
 
 > **편향된 학습 데이터로 인해 자연스럽게 실수하는 초창기 ChatGPT 재현 챗봇**
 
-[실행하기](https://hallucinator-real.netlify.app/)
+[실행하기](https://hallucinatorreal.mjwbryan131.workers.dev/)
 
 ## 1. 소개 (Introduction)
 
@@ -21,7 +21,7 @@
 
 - **Frontend**: Vanilla HTML / CSS / JS
 - **AI API**: Grok API (xAI, OpenAI 호환 스트리밍)
-- **Deployment**: GitHub Pages + Actions 자동 배포
+- **Deployment**: Cloudflare Workers
 
 ## 3. 설치 및 실행 (Quick Start)
 
@@ -47,7 +47,7 @@
 ```text
 hallucinator-real/
 ├── index.html         # 메인 페이지
-├── netlify.toml       # Netlify 빌드 설정 (API 키 주입)
+
 ├── css/
 │   └── style.css      # 2022 ChatGPT 다크 모드 UI
 ├── js/
