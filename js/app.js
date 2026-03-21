@@ -420,8 +420,8 @@ function handleKeydown(e) {
 
 /* ===== Version Selector ===== */
 const VERSION_URLS = {
-  troll: 'https://hallucinator-troll.netlify.app/',
-  real: 'https://hallucinator-real.netlify.app/'
+  troll: 'https://hallucinatortroll.mjwbryan131.workers.dev/',
+  real: 'https://hallucinatorreal.mjwbryan131.workers.dev/'
 };
 
 function toggleVersionDropdown() {
